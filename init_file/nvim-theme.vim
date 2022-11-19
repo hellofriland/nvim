@@ -12,8 +12,11 @@
 " colorscheme tokyonight-day
 " colorscheme tokyonight-moon
 
-" colorscheme deus
+colorscheme deus
 
+" set background=light
+" set background=dark
+" colorscheme PaperColor
 
 
 " let statue line become simple

@@ -27,3 +27,5 @@ autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
 " 引用
 autocmd Filetype markdown inoremap ,p ![](<++>)<++><Esc>F[a
 autocmd Filetype markdown inoremap ,a [](<++>)<++><Esc>F[a
+
+autocmd Filetype cpp inoremap " ""<Esc>F"a

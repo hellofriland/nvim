@@ -9,6 +9,10 @@ Plug 'vim-airline/vim-airline-themes'
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Markdown
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
+
 " File Tree
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
@@ -17,18 +21,20 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme'
 Plug 'ajmwagar/vim-deus'
+Plug 'NLKNguyen/papercolor-theme'
 
 " Zen Mode
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
-Plug 'itchyny/calendar.vim'
+" Plug 'itchyny/calendar.vim'
 
 call plug#end()
 
 
 
 " ============================================
-" ===================Basic====================
+" =                  Basic                   =
 " ============================================
 
 " 将编码格式设置为UTF-8
@@ -51,39 +57,41 @@ set shiftwidth=4
 
 " 文件操作
 noremap fw     :w<CR>
-noremap fq     :wq<CR>
+noremap fq     :q<CR>
 noremap )      $
-noremap dw		dw
-noremap dd		dd
-noremap ww		w
+
+
 " 窗口操作
 " 默认窗口新建在右边
 :set splitright
 
-
-noremap wa			:qall<CR>
-noremap wq			:q<CR>
-noremap <S-w>		<C-w>w
-noremap <S-h> 		<C-w>h
-noremap <S-l> 		<C-w>l
-noremap <S-j> 		<C-w>j
-noremap <S-k>		<C-w>k
-noremap wv			<Esc>:vsplit<CR>
-noremap wh			<Esc>:split<CR>
+noremap <C-w>q			:q<CR>
+noremap <C-w>aq			:qall<CR>
+noremap <C-w>v			<Esc>:vsplit<CR>
+noremap <C-w>vv			<Esc>:split<CR>
+" noremap <S-h> 		<C-w>h
+" noremap <S-l> 		<C-w>l
+" noremap <S-j> 		<C-w>j
+" noremap <S-k>			<C-w>k
 
 
 
-noremap c			<Esc>:Calendar<CR>
+" noremap c			<Esc>:Calendar<CR>
 
+set cmdheight=1
 
 " ============================================
-" ===================Import===================
+" =                  Import                  =
 " ============================================
 " Import coc setting file
 source $HOME/.config/nvim/init_file/coc.vim
 
-" Import markdown setting file
-source $HOME/.config/nvim/init_file/md.vim
+" Import markdown
+source $HOME/.config/nvim/style/md_style.vim
+
+" Import c/cpp
+source $HOME/.config/nvim/style/cpp_style.vim
+source $HOME/.config/nvim/style/c_style.vim
 
 " Import nvim-tree setting file
 source $HOME/.config/nvim/init_file/nvim-tree.vim
@@ -94,3 +102,5 @@ source $HOME/.config/nvim/init_file/nvim-theme.vim
 " Import goyo
 source $HOME/.config/nvim/init_file/goyo.vim
 
+" Import vim-markdown config file
+source $HOME/.config/nvim/init_file/vim-markdown.vim
